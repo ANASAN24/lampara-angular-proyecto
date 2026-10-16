@@ -1,0 +1,17 @@
+<p>lampara works! input:{{ this.enchufadaHIJA() }}</p>
+
+<div>
+ <!-- @if(encendida){
+    <span>💡 ENCENDIDA</span>
+  } @else {
+    <span>❌ APAGADA</span>
+  }-->
+
+  <span [class.desenchufada]="!this.enchufadaHIJA()"> {{ this.enchufadaHIJA() && this.encendida ? '💡 ENCENDIDA' : '❌ APAGADO' }}</span>
+</div>
+
+<div>
+  <button [disabled]="!this.enchufadaHIJA()" (click)="onApagarEncender()">
+    {{ encendida ? 'APAGAR' : 'ENCENDER' }}
+  </button>
+</div>
